@@ -1,0 +1,13 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+.nav-line {
+    @apply mb-8 text-right;
+  }
+  .nav-line .nav-link {
+    @apply ml-3 text-gray-600;
+  }
+  .nav-line span.nav-link {
+    @apply ml-3 text-gray-900 cursor-default;
+  }
