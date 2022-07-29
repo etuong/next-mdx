@@ -26,13 +26,11 @@ export async function getStaticProps() {
 const Home = ({ posts }) => {
   return (
     <React.Fragment>
-      <h1>Hello, Ethan!</h1>
+      <h1>Hello!</h1>
       <p>
-        Hey, I'm a Senior Software Engineer at Company. I enjoy working with
-        Next.js and crafting beautiful front-end experiences. This portfolio is
-        built with Next.js and a library called Nextra. It allows you to write
-        Markdown and focus on the content of your portfolio. Deploy your own in
-        a few minutes.
+        Yo, they call me Ethan. I'm a software engineer who likes to build
+        simple yet elegant things. Here you'll find blog posts on random topics
+        that I come across in my career.
       </p>
       {posts.map(({ slug, frontMatter }) => (
         <div key={slug} className="post-item">
