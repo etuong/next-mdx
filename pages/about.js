@@ -45,7 +45,7 @@ const About = () => {
         and allowed his experiences to diversify his view of the world. Uong
         continues to believe that a worldly experience can lead to success and
         acceptance. For Uong, knowledge is power and with power, comes the
-        ability to positively influence people's lives. Each time he traveld
+        ability to positively influence people&sbquo;s lives. Each time he traveld
         abroad, he obtained a vast knowledge of their culture and gained a
         better appreciation of his own.
       </p>

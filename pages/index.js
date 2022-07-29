@@ -28,8 +28,8 @@ const Home = ({ posts }) => {
     <React.Fragment>
       <h1>Hello!</h1>
       <p>
-        Yo, they call me Ethan. I'm a software engineer who likes to build
-        simple yet elegant things. Here you'll find blog posts on random topics
+        Yo, they call me Ethan. I&sbquo;m a software engineer who likes to build
+        simple yet elegant things. Here you&sbquo;ll find blog posts on random topics
         that I come across in my career.
       </p>
       {posts.map(({ slug, frontMatter }) => (
