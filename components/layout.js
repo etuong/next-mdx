@@ -8,18 +8,21 @@ export default function Layout({ children }) {
       <Head>
         <title>Ethan</title>
       </Head>
-      <article className="container prose prose-sm md:prose">
+      <article className="prose prose-sm md:prose">
         <div className="nav-line">
           <Link href="/">
             <a className="nav-link">Home</a>
           </Link>
+          <Link href="/about">
+            <a className="nav-link">About</a>
+          </Link>
         </div>
-        
-        <main className="container mx-auto flex-1">{children}</main>
+
+        <main className="mx-auto flex-1">{children}</main>
 
         <footer>
-          <div className="container mx-auto flex justify-center">
-            &copy; 2022 DailyDevTips
+          <div className="mx-auto flex justify-end">
+            &copy; 2022 Ethan Uong
           </div>
         </footer>
       </article>
