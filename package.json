@@ -16,6 +16,7 @@
     "marked": "^2.1.3",
     "next": "latest",
     "next-mdx-remote": "^4.1.0",
+    "next-optimized-images": "^2.6.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-syntax-highlighter": "^15.4.4"
