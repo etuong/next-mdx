@@ -6,7 +6,7 @@ export default function Layout({ children }) {
   return (
     <React.Fragment>
       <Head>
-        <title>Ethan</title>
+        <title>Ethan's Randomness</title>
       </Head>
       <article className="prose prose-sm md:prose">
         <div className="nav-line">
