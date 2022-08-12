@@ -1,3 +1,10 @@
+## Blogging with Next.js and Markdown
+
+This repo is for you if you want a simple and clean app to blog using Markdown. Markdown is ideal for blogging. Why go through the heavy lifting if you just want to generate expressive contents? With this repo, you have a complete blogging management system up and running in minutes!
+
+![screenshot](screenshot.png)
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
