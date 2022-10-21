@@ -1,0 +1,31 @@
+---
+title: Life Hacks
+metaDesc: A collection of random truths to help the game of life
+---
+
+---
+
+### Life-changing websites
+
+These websites have proven to be the secret juice that life drinks in its spare time
+
+- [PhotoRoom](https://app.photoroom.com/create): Change background image
+- [Game Emulators](https://emulatorgames.online/): Play video games online!
+
+---
+
+### Automatically move cursor
+
+We have all been there. At work, there's always that one person who's stalking you to make sure you're online. So, once in a while you'd touch your mouse to move the cursor a bit so your messenger is active and your status is green. Well, let's make life simple with a simple Python script.
+
+```
+import pyautogui as pag
+import random
+import time
+
+while True:
+	x = random.randint(600,700)
+	y = random.randint(200,600)
+	pag.moveTo(x,y,0.5)
+	time.sleep(2)
+```
