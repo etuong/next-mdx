@@ -29,7 +29,7 @@ const Home = ({ posts }) => {
       <h1>Hello!</h1>
       <p>
         Yo, they call me Ethan. I&sbquo;m a software engineer who likes to build
-        simple yet elegant things. Here you&sbquo;ll find blog posts on random topics
+        simple yet elegant things. Here you&#39;ll find blog posts on random topics
         that I come across in my career.
       </p>
       {posts.map(({ slug, frontMatter }) => (
