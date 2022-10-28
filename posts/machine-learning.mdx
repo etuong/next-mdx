@@ -1,6 +1,6 @@
 ---
 title: Machine Learning
-metaDesc: My notes on Machine Learning
+metaDesc: Machine Learning is defined as the capability of a machine to imitate intelligent human behavior
 ---
 
 <img src="/images/ml.jpg"/>
@@ -13,6 +13,8 @@ Examples of labels: Future price of wheat, the kind of animal shown in a picture
 Examples of features: Words in the email text, number of black pixels
 
 In unsupervised learning, the goal is to identify meaningful patterns in the data. To accomplish this, the machine must learn from an unlabeled data set. In other words, the model has no hints how to categorize each piece of data and must infer its own rules for doing so.
+
+<img src="/images/ml2.png"/>
 
 ML is like natural sciences.
 
@@ -44,7 +46,15 @@ Logistc regression is used to solve classification problems and is categorical i
 
 Machine learning is the science of making computers learn and act like humans by feeding data and information without being explicitly programmed.
 
-Steps to machine learning: define objective, collect data, prepare data, select algorithm, train model, test model, predict, deploy.
+Steps to machine learning: 
+1. Define objective
+1. Collect data
+1. Prepare data
+1. Select algorithm
+1. Train model
+1. Test model
+1. Predict
+1. Deploy
 
 Do you want to predict a category? If so that's a predict. Classication problems are yes or no. Do you want to predict a quantity? That's regression, for example predicting the age of a person based on height, weight, health, and other factors. Do you want to discover structure in unexplored data? That's clustering, for example finding groups of customers with similar behavior given a large database of customer data containing their demographics and past buying records.
 
@@ -54,6 +64,8 @@ Reinforcement learning is an important type of Machine Learning where an agent l
 
 A decision tree is a literal tree of decisions where nodes branches from data (or conditions). Entropy is the measure of randonmess or "impurity" in the dataset. We want entropy to be low. Information Gain is the measure in entropy after the dataset is split. Information Gain should be high. We choose the attribute with the largest information gain as the root node.
 
+<img src="/images/ml3.png"/>
+
 Loss is the penalty for a bad prediction. That is, loss is a number indicating how bad the model's prediction was on a single example. If the model's prediction is perfect, the loss is zero; otherwise, the loss is greater. It's basically the offset between the prediction and true features.
 
 It will be nice to have some sort of function that quantifies the losses. A popular loss function is the error square which is defined as the square of the difference between the label and the prediction.
@@ -61,6 +73,8 @@ It will be nice to have some sort of function that quantifies the losses. A popu
 The loss versus weights plot is always convex (happy face shape). Our goal is to find the weight where the deriative is zero. There is only one place where the slope is exactly zero and to calculate the loss function for every conceivable value of w's over the entire data set is inefficient to find this convergence point. A popular technique is gradient descent.
 
 Gradient vector has both a direction and a magnitude. To find the next point on the loss curve, we multiple the gradient by a scalar known as the learning rate (aka step size). This is an iterative process. Machine learning programmers will play with knobs called hyperparameters to fine tune the learning rate. A small learning rate will take too long to learn, a big learning rate will overshoot the minimum.
+
+<img src="/images/ml4.png"/>
 
 Goldilock is the learning curve with the fewest number of steps required to reach the minimum.
 
@@ -76,8 +90,13 @@ A validation set is a partition of the training set to prevent overfitting on pe
 
 Feature engineering is the process of creating features from raw data.
 
+<img src="/images/ml5.webp"/>
+
 Mapping numeric values is straightforward but mapping strings like street address isn't. One approach is to use a mapping technique called one-hot encoding.
 
 Good feature values should appear more than 5 or so times in a data set e.g house_id will not be a good feature.
 
-Cleaning data throws away the bad data. (1) Scaling helps gradient descent to converge more quickly because the range of focus is more narrow. (2) Handle extreme outliers. Using a log scale graph helps with this visual. (3) Other techniques include binning and scrubbing.
+Cleaning data throws away the bad data.
+1. Scaling helps gradient descent to converge more quickly because the range of focus is more narrow.
+1. Handle extreme outliers. Using a log scale graph helps with this visual.
+1. Other techniques include binning and scrubbing.

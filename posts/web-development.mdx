@@ -1,0 +1,142 @@
+---
+title: Web Development
+metaDesc: Web development is the work involved in developing a website. It can range from developing a simple single static page of plain text to complex web applications, electronic businesses, and social network services.
+---
+
+<img src="/images/wd.png" />
+
+#### Basic Concepts
+
+1. HTML is like the skeleton of the human body. It provides the content to be displayed on the browser. CSS is like the skin, it gives the appearance and aesthetics of the web. JavaScript enables the human's motion, it's what makes the website/webapp dynamic.
+1. AJAX is a set of techniques that allow communication between the client and server without interfering with the display and behavior of the existing page. The famous jQuery $.ajax() or the Fetch API are made possible due to this.
+1. The OSI model is a model that describes the universal standard of communication functions of a telecommunication system or computing system. On the very top of the stack we have the Application layer which is HTTP.
+1. The HTTP protocol is a request/response system e.g make an endpoint request and get a JSON response. It also contains headers which communicates what content type to expect (plain text, XML, etc), which origins to accept (CORS), status code (400 client error, 500 server error, 300 redirects etc), among many other useful meta data and information.
+1. The Document Object Model, DOM, is a representation of the logical tree that the brower renders on the web page. Since HTML is a markup language, it's essentially a tree where each node is an object representing a part of the document. The manipulation of the DOM (e.g document.getElementById) is how you can see the changes in content.
+
+#### Web Components
+
+1. Client side rendering and server side rendering both have pros and cons. Namely, SSR is good for search engine optimization (e.g searching in Google), loads pages faster but may require a DOM refresh. CSR takes longer to bootstrap all the modules into a package but once fetched over to the browser, the user experience is better and more seamless. DOM stays intact and gets updated thanks to the virtual and shadow DOM. React and Angular are CSR, but these days you can also have React in the backend such as Next.js.
+1. Components are meant to be reusable and portable. However, framework components are restricted to their environment. For example, React components cannot be used in Angular, Angular components cannot be used in Vue etc.
+1. Web Components, on the other hand, is just using HTML elements to create new HTML element. These web components are recognized by any library or framework because they are just the building blocks rendered by the browser e.g `<div>`, `<img>`, `<form>`,`<p>`, etc.
+1. A framework to create Web Component is Stencil.js which is a compiler that takes code that looks and behaves very similar to React (.tsx and .jsx format) and compiles to web components. This is made possible due to four specifications (https://www.webcomponents.org/specs) that Stencil takes care for us.
+
+<img src="/images/wd2.png" />
+
+#### Node.js
+
+1. JavaScript historically runs only on the browser. Node.js was created to make this language cross-platform, meaning it could be executed outside the browser. Node is an environment that allows JavaScript to be coded in the backend. This was a big thing because now developers can build a full stack project using just one language (before it had to be done with PHP, or Java servlets, or C# ASP.net, or Ruby on Rails)
+1. Many popular frameworks like Express.js and Koa.js are built on top of Node.
+1. Node can handle a large amount of simultaneous connections in a non-blocking concurrent manner. This makes it easier to scale.
+1. NPM is a package manager. You want to use this (or Yarn) if you want to pull in external dependencies. Node packages live in a registry like npmjs.com. For Python, this is like pip. For Java this is like Gradle or Maven.
+   Package.json is an important file that explains about the project such as the author, the module dependencies, the run scripts, etc.
+
+#### Content Management system
+
+1. Over 40% of all the websites in the world are powered by Wordpress. It's super convenient and user friendly to create blogs or other contents and assets without the need to code.
+1. Strapi is a headless CMS, meaning it does not have a front end client. It's a CMS that exposes its data through REST API or GraphQL.
+1. Postman is useful to make RESTful API calls.
+
+#### Asynchronous Programming
+
+<img src="/images/wd3.png" />
+
+1. JavaScript is single threaded. Unlike other languages like Java or Python that are multithreaded, JavaScript can only execute one instruction at a time.
+1. So how does the browser fetch a request and allow events like button click and UI refresh for example? Through the Promise API. Promise in JavaScript literally promises something to be resolved without blocking the thread. It's like saying, "oh, go run the next instruction, I'll come back to you when I am resolved"
+1. Async and Await are just cute syntaxes to avoid callback chaining in Promise. It basically makes the async code look synchronous.
+1. Concurrency and parallelism are not the same thing. Parallelism is like waiting in two different lanes with two different cashiers. Concurrency is like waiting in two different lanes going to the same single cashier. Concurrency can be achieved with just one thread but parallelism requires more than one core. When you buy a computer, it will say something like 2.4Ghz dual core, this means the processor has two cores where each core executes 2.4 billion instructions per second.
+1. JavaScript really just has two things, the memory heap and a call stack. The heap is where objects need to be maintained (e.g const ethan = new Ethan()) and the call stack keeps track of the functions called subroutinely. There's also Web API that has functions like setTimeOut() or fetch() that takes in a callback. These callbacks get put in a Task Queue where the 1. Event Loop is responsible for putting them back to the call stack. This is how asynchronous programming is achieved in JavaScript. This is a great [video](https://www.youtube.com/watch?v=8aGhZQkoFbQ) to watch!
+
+#### Typescript
+
+1. JavaScript by nature is a dynamic weakly typed language. It's dynamic because var ethan can be 1 (int) and then “one” (string). In Java or any other statically typed language you can't do this. String ethan is a string and int ethan is an integer. JavaScript is a weakly-typed language because you can do something like “ethan” + 3 to get “ethan3”. Strongly typed languages like Python you can't; you'll get an error saying you can't add a string and an int together.
+1. Types are awesome, especially for debugging purposes! TypeScript allows developers to add types to JavaScript so that you can detect errors in compile/build time instead of run time. There are other benefits including support for interfaces, generics, and so many more.
+
+#### SASS/SCSS
+
+CSS on its own can be fun, but stylesheets are getting larger, more complex, and harder to maintain. This is where a preprocessor can help. Sass has features that don't exist in CSS such as:
+
+Variables - Wouldn't it be nice to have a way to store information that you can reuse throughout your stylesheet? For example, you can have a variable for a color red named $primary-color. You can assign this variable to 10 thousand places and then if you ever want to change red to green, you just have to change in one place.
+
+```
+$font-stack: Helvetica,sans-serif;
+$primary-color: #333;
+body {
+  font: 100% $font-stack;
+  color: $primary-color;
+```
+
+Nesting - This one is my favorite. It's so annoying when you have to be repetitive in CSS. With nesting you can have a clear and visual hierarchy.
+
+CSS Example:
+
+```
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+nav li {
+  display: inline-block;
+}
+nav a {
+  display: block;
+  padding: 6px 12px;
+  text-decoration: none;
+}
+```
+
+SASS Example
+
+```
+nav {
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  li { display: inline-block; }
+
+  a {
+    display: block;
+    padding: 6px 12px;
+    text-decoration: none;
+  }
+}
+```
+
+Partial - Partial Sass files contain little snippets of CSS that you can include in other Sass files
+Mixins - Imagine if CSS supports function. Yup. Mixins are cool because they let you make groups of CSS declarations that you want to reuse throughout your site
+
+```
+@mixin theme($theme: DarkGray) {
+  background: $theme;
+  box-shadow: 0 0 1px rgba($theme, .25);
+  color: #fff;
+}
+
+.info {
+  @include theme;
+}
+.alert {
+  @include theme($theme: DarkRed);
+}
+```
+
+Math - CSS has complex calc functions. With Sass we have a handful of standard math operators like +, -, \*, math.div(), and %. Extend and Inheritance - Using @extend lets you share a set of CSS properties from one selector to another.
+
+```
+%message-shared {
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: #333;
+}
+.message {
+  @extend %message-shared;
+}
+
+.success {
+  @extend %message-shared;
+  border-color: green;
+}
+```

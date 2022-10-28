@@ -1,6 +1,6 @@
 ---
 title: DevOps
-metaDesc: My notes on DevOps
+metaDesc: DevOps is the combination of cultural philosophies, practices, and tools that increases an organization’s ability to deliver applications and services at high velocity.
 ---
 
 <img src="/images/devops.png" />
@@ -21,6 +21,8 @@ metaDesc: My notes on DevOps
 - Backseat Navigator - Same as driver navigator but the navigator dictates tactical instructions. Works best with novice-expert pairings.
 - Tour Guide - Driver does everything and verbal tells the tourist everything he does and sees, tourist rarely intervenes.
 - Ping-Pong Pairing - The cadence works simply enough. The first person writes a failing test and the second person gets it to pass. Then the second person writes a failing test and the first person gets it to path. Back and forth, back and forth. Kind of like a game of ping pong.
+
+<img src="/images/devops2.jpg" />
 
 #### Challenge in Pair Programming:
 
@@ -54,6 +56,8 @@ Test-first is one of the pillars of Extreme Programming (XP) methodology. The be
 Principles:
 By combining programming, unit test writing and refactoring, TDD is a structuring practice that allows to obtain a clean code, easy to modify and answering the expressed needs which remains the first priority when developing an application.
 
+<img src="/images/devops3.png" />
+
 Red phase: First write a unit test that fails.
 Green phase: Write passable production code
 Refactor phase: Optimize code
@@ -69,3 +73,22 @@ A clean test follows FIRST rules:
 - Timely: a test must be written at the appropriate time, i.e. just before the production code it will validate.
 
 Test-driven development (TDD) is a software development process that relies on the repetition of a very short development cycle: first the developer writes an (initially failing) automated test case that defines a desired improvement or new function, then produces the minimum amount of code to pass that test, and finally refactors the new code to acceptable standards.
+
+#### Docker
+
+<img src="/images/devops4.png" />
+
+1. In short, when you hit the power button, your computer is sending a signal that activates the BIOS (Basic Input Output System) which does a health test (that's why some computers beep once or twice). If the self diagnostic test passes, the BIOS looks for the boot loader in your hard drive to boot up the operating system. It can do this because the BIOS is equipped with instructions from the Read-Only Memory (ROM), hence it doesn't need the OS yet, it's non volatile.
+1. The processor is the brain, it does all the computing. But, the kernel is the heart. It facilitates and provides basic services for all parts of the system, manages hardware and distributes the system resources. It helps with process and memory management, file systems, device control and networking etc. It's the core of the OS! Without the kernel, there's really no way for the operating system to interface with the hardware.
+1. A virtual machine is nothing more than an OS inside an OS. This is made possible due to something known as the hypervisor. It's heavily expensive in resources because an operating system needs many binary libraries. Before virtual machines, companies would have physical computers on premise. This was even more expensive, and financially too. Virtualization is what enabled the Cloud. For example, when you rent out the instance service like AWS EC2, you're really paying for a virtual machine that you don't need to be concerned about. VMs were a great help but Docker is better.
+1. Containerization is a technology where Docker containers share the same OS kernel which is the host kernel. Here you only have one OS and a Docker engine that spins up one or more containers that are lightweight and are only made up for what they need. This is why they are so fast. You control what you want in the Docker containers.
+1. A Docker container is a running instance of a Docker image. A Docker image is an isolated environment that is built from a Dockerfile. It provides a convenient way to package up applications and preconfigured server environments. Key concept is that Docker images are lightweight and should only serve one process. This is another reason why Docker is so great with microservices.
+1. Another benefit of Docker is its portability. Nowadays Docker is heavily used in DevOps to simulate a testing environment. Back in the day, developers would have to burn an image on a disk and give it to the operation platform team to test. Sometimes the teams do it wrong or whatever and you're talking about apple to orange. Docker can solve this because as developers, you can create the Dockerfile, build it, and have the ops team pull it down.
+
+#### Tools
+
+1. Chef and Anisble for infrastructure-as-a-code. Instead of manually creating n virtual machines, you can write code like Yaml to provision and manage those machines in a single file!
+1. Kubernetes to orchestrates containerized hosts. Say good bye to manually manage processes deploying and scaling clusters of applications! An orchestrator in a concert says how many trumpets we needed, who plays the first trumpet, how loud should the second trumpet be etc. Kubernetes does the same for Docker containers.
+1. ElasticSearch, LogStash, Kibana. Monitoring, alerting, and responding tools to give us real-time code performance visibility and provide support system to log and query.
+1. Agile focuses on the customer and development side, DevOps extend this over to the operation side.
+1. Key concepts - continuous integration, source control management, build automation tools, code testing framework.
