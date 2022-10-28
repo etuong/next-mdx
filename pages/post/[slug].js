@@ -7,9 +7,9 @@ import SyntaxHighlighter from "react-syntax-highlighter";
 
 export async function getStaticPaths() {
   const files = fs.readdirSync("posts");
-  const paths = files.map((fileName) => ({
+  const paths = files.map((file) => ({
     params: {
-      slug: fileName.split(".")[0],
+      slug: file.split(".")[0],
     },
   }));
   return {
@@ -19,8 +19,8 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params: { slug } }) {
-  const fileName = fs.readFileSync(`posts/${slug}.mdx`, "utf-8");
-  const { data: frontmatter, content } = matter(fileName);
+  const source  = fs.readFileSync(`posts/${slug}.mdx`, "utf-8");
+  const { data: frontmatter, content } = matter(source );
   const mdxSource = await serialize(content);
   return {
     props: {
