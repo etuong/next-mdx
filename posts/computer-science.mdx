@@ -4,3 +4,53 @@ metaDesc: Computer science focuses on the development and testing of software an
 ---
 
 <img src="/images/cs.jpg" />
+
+#### Programming
+
+1. 1. If a language needs to declare the type of a variable, then it's statically typed. Examples are Java and C++ e.g “int variable” or “String name” or “boolean flag”
+      Otherwise it's dynamically typed. Examples are Python and JavaScript e.g “const variable” or “let name”. Python doesn't even have that, you just assign the variable e.g “a=1”,
+1. A strongly typed language is one where the types do not change. Examples are Java and Python. You will get an error if you do 1 + “one” because you can't add a number and a string together.
+1. Otherwise it's known as weakly typed language such as JavaScript where 1 + “one” will give you “1one”.
+1. So, Java is considered a Statically strongly typed language whereas JavaScript is Dynamically Weakly typed language.
+1. There are different generations of languages. The higher the level, the more abstract it is from machine code and closer to human language. The lower the level, the faster. For example, assembly is considered a lower level language than SQL. No language is faster than machine code but since it's almost possible to write a program in binary, we abstract the compilation with higher level languages so it's easier to code.
+1. Compiled versus interpreted languages, compiled languages require developers to wait to compile but once compiled, code is much faster because everything is assembled and ready to go. Interpreted languages execute line by line thus developers see results/outputs quicker but it's slower than compiled program. There are purposes for everything – operating system prioritizes speed and multithreading so they are generally built in low(er) languages like C or Rust, etc e.g JavaScript in browsers.
+
+#### Data Structure and algorithms
+
+##### What is a data structure?
+* An aggregation of data to make a meaningful whole
+* A way of arranging data in memory or space
+* A collection of data for organization and retrieval
+* Data structures can be linear (arrays, stacks, linked lists, or queues) or nonlinear (trees, graphs, tables, or sets).
+    * If I give you a deck of cards to keep with you, how will you keep it? Will you arrange the cards one over another and from a proper deck OR you will go and throw them randomly?
+    * In social media, suppose you want to know all the friends of yours, friends of friends, mutual friends between you and your friend and so on. What will be your approach? Table? Graph?
+
+##### What is algorithm?
+* A high level, language independent description of a step-by-step process for solving a problem
+* A set of instructions  for solving a problem or accomplishing a task.
+* Data structures organize data and algorithms use that organization
+* There are great algorithms and not so great algorithms
+* Suppose you want to search a word in dictionary, what do you do?
+* You are trying to arrange cards in your hand. What do you do?
+* https://www.youtube.com/watch?v=koMpGeZpu4Q&ab_channel=DanSiroker
+
+<img src="/images/algo.jpg" />
+
+#### Linters
+
+1. Linter is a static code analysis tool to help improve code quality. It's particularly popular for dynamically-typed languages since errors are usually detected in runtime.
+1. Linter improves code by analyzing source code looking for problems.
+1. Linter has advantages:
+   - Fewer code smells and errors in production,
+   - Readable, maintainable, and more consistent code through rule enforcement.
+   - Helps with code review and reduces technical discussions about code style.
+1. Linter checks for Syntax errors (very useful for interpreted languages like JavaScript)
+1. Linter adheres to coding standards. This is more than just aesthetics, it makes the codebase consistent throughout if used correctly.
+1. Languages like JavaScript have no compiler to pre-check rules and errors, as a result everything is checked and executed in runtime.
+1. A linter is a tool used to analyze code and discover bugs, syntax errors, stylistic inconsistencies, and suspicious constructs
+1. Prettier is an opinionated code formatter with support for JavaScript, HTML, CSS, and more.
+1. ESlint is not only a code formatter, it also helps developers to find coding errors. For Example, ESLint will give you a warning if you use a variable without declaring it. Prettier doesn't have such an ability. Also, ESLint will let you know what's wrong with your code formatting and give you options to fix the issue.
+
+#### Static Site Generators
+
+1. A static site generator is a tool that generates a full static HTML website based on raw data and a set of templates. Essentially, a static site generator automates the task of coding individual HTML pages and gets those pages ready to serve to users ahead of time. Because these HTML pages are pre-built, they can load very quickly in users' browsers.
