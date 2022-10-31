@@ -18,21 +18,23 @@ metaDesc: Computer science focuses on the development and testing of software an
 #### Data Structure and algorithms
 
 ##### What is a data structure?
-* An aggregation of data to make a meaningful whole
-* A way of arranging data in memory or space
-* A collection of data for organization and retrieval
-* Data structures can be linear (arrays, stacks, linked lists, or queues) or nonlinear (trees, graphs, tables, or sets).
-    * If I give you a deck of cards to keep with you, how will you keep it? Will you arrange the cards one over another and from a proper deck OR you will go and throw them randomly?
-    * In social media, suppose you want to know all the friends of yours, friends of friends, mutual friends between you and your friend and so on. What will be your approach? Table? Graph?
+
+- An aggregation of data to make a meaningful whole
+- A way of arranging data in memory or space
+- A collection of data for organization and retrieval
+- Data structures can be linear (arrays, stacks, linked lists, or queues) or nonlinear (trees, graphs, tables, or sets).
+  - If I give you a deck of cards to keep with you, how will you keep it? Will you arrange the cards one over another and from a proper deck OR you will go and throw them randomly?
+  - In social media, suppose you want to know all the friends of yours, friends of friends, mutual friends between you and your friend and so on. What will be your approach? Table? Graph?
 
 ##### What is algorithm?
-* A high level, language independent description of a step-by-step process for solving a problem
-* A set of instructions  for solving a problem or accomplishing a task.
-* Data structures organize data and algorithms use that organization
-* There are great algorithms and not so great algorithms
-* Suppose you want to search a word in dictionary, what do you do?
-* You are trying to arrange cards in your hand. What do you do?
-* https://www.youtube.com/watch?v=koMpGeZpu4Q&ab_channel=DanSiroker
+
+- A high level, language independent description of a step-by-step process for solving a problem
+- A set of instructions for solving a problem or accomplishing a task.
+- Data structures organize data and algorithms use that organization
+- There are great algorithms and not so great algorithms
+- Suppose you want to search a word in dictionary, what do you do?
+- You are trying to arrange cards in your hand. What do you do?
+- https://www.youtube.com/watch?v=koMpGeZpu4Q&ab_channel=DanSiroker
 
 <img src="/images/algo.jpg" />
 
@@ -53,4 +55,73 @@ metaDesc: Computer science focuses on the development and testing of software an
 
 #### Static Site Generators
 
-1. A static site generator is a tool that generates a full static HTML website based on raw data and a set of templates. Essentially, a static site generator automates the task of coding individual HTML pages and gets those pages ready to serve to users ahead of time. Because these HTML pages are pre-built, they can load very quickly in users' browsers.
+A static site generator is a tool that generates a full static HTML website based on raw data and a set of templates. Essentially, a static site generator automates the task of coding individual HTML pages and gets those pages ready to serve to users ahead of time. Because these HTML pages are pre-built, they can load very quickly in users' browsers.
+
+Every web page has two states:
+
+- The initial HTML
+- The rendered HTML
+
+The initial HTML occurs first. It is the response from the server. In it is HTML and links to resources like JavaScript, CSS, and images that are needed to build to the page.
+
+Rendered HTML is more widely known as the Document Object Model. Every webpage has a DOM. It represents the initial HTML plus any changes made by JavaScript that HTML called on.
+
+There are a number of ways to render web pages:
+
+1. Traditional static websites use static HTML, CSS, and JS and upload to a CDN or web host.
+
+   - Good for SEO (Search Engine Optimization) because pages are pre-rendered but some drawbacks include difficulty to update or maintain (e.g rewrite of same code on multiple pages) and fresh request for every page.
+
+1. Client-side rendering such as Single Page Applications (e.g React, Vue, etc for a single server request made for the initial empty HTML page).
+
+   - Everything including routing and data are bundled to handle on the browser side.
+   - Pros are speed and maintainability, but tradeoff is SEO. Search engines such as Google cannot index what it cannot render.
+
+1. Server Side Rendered (SSR)
+   - Good for SEO and maintainability but not so great for speed because every request is rendered on the go.
+
+SEO is a valid consideration but is not relevant for this team. Nevertheless, each approach described above has tradeoffs and drawbacks. It will be ideal to have a mechanism that produce web pages that are not only fast in performance and speed, but also easy and feasible to maintain.
+
+<img src="/images/static-site.png" />
+
+##### Decision Drivers
+
+- Align with JAMstack
+  - JAMstack is a modern architecture for building websites and applications. The JAM in JAMstack stands for JavaScript, APIs, and HTML markup.
+  - Traditionally, we have CMS like WordPress that requires a database to store content and there's also a presentation layer of template files that mix HTML with template tags. In this type of architecture, the frontend and backend are tightly-coupled. Both the content and how it's presented are part of the same code base (aka monolithic architecture). In a JAMstack architecture, these ends are decoupled. The frontend static resources (HTML, CSS, JS) are generated by Gatsby during the build process and the backend is any content API that returns a JSON or XML (and maybe even GraphQL). One such API is through Strapi.
+- Have the speed of the lightweight static website on the front-end, and the flexibility of dynamic websites on the back-end
+
+Static Site Generation (SSG) describes the process of compiling and rendering a website or app at build time. The output is a bunch of static files, including the HTML file itself and assets like JavaScript and CSS to be served entirely on the first load. These files can additionally be cached on a CDN (Content Delivery Network) for even faster retrieval.
+
+> SSG has the benefits of all types of website (as discussed above). It's good for SEO, speed, and maintainability. Because SSG generates all static pages during build time before deployment, all pages are fully rendered. As a result, SSG is blazing fast.
+
+##### When should I use Static Generation?
+
+It is recommended to use Static Generation (with and without data) whenever possible because pages can be built once and served by CDN, which makes it much faster than having a server render the page on every request. On the other hand, Static Generation is not a good idea if you cannot pre-render a page ahead of a user's request.
+
+##### Advantages of Static Site Generation
+
+1. Security
+   - There is no possibility of anyone hacking a static HTML page.
+   - An SSG doesn't require a database or server-side rendering for execution like a traditional CMS. Dynamic platforms may be susceptible to hacks such as SQL injections. SSGs don't have a database, and display the page a user requests, removing the possibility of a hack.
+   * With SSG, you will just publish static files, which means there is no direct connection to the database, dependencies, user data or other sensitive information.
+1. Scalability
+   - Because SSGs are designed such that each page is ready to go upon request from the CDN, the drawback of server-response times is illuminated. In theory, this results in a near-infinite scalability.
+1. Speed and Performance
+   - Precompiled files = elimination of server-response time.
+   - Closer to the request (via global CDN) = faster response time.
+1. Flexibility
+   - We create and design our own templates that are decoupled from traditional CMS (not limited by the fields provided by a CMS, nor by a CMS's built-in templates).
+1. User Experience
+   - Clicking and walking through your website feels like a seamless experience with no unexpected dead ends or undesired turns.
+1. Affordability
+   - Static websites are easier to host than dynamic websites. No need for expensive computing services. Static websites can be hosted easily or even freely on platforms such as Github and Netlify.
+
+##### Disadvantages of Static Site Generation
+
+1. Learning Curve
+   - Unlike CMSs like WordPress, SSGs are not plug-and-play. You need some coding knowledge to customize and maintain static site generators. The learning curve can be steep for those without a technical background.
+1. Dynamic features
+   - Features that are dynamic such as a commenting system can be tricky.
+1. Built-in Templates
+   - With SSG you are essentially on your own in terms of standing up the project. There are many built-in themes and customization.
