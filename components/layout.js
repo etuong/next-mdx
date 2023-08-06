@@ -21,9 +21,7 @@ export default function Layout({ children }) {
         <main className="mx-auto flex-1">{children}</main>
 
         <footer>
-          <div className="mx-auto flex justify-end">
-            &copy; 2022 Ethan Uong
-          </div>
+          <div className="mx-auto flex justify-end">&copy; 2023 Ethan Uong</div>
         </footer>
       </article>
     </React.Fragment>

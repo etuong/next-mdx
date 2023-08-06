@@ -1,0 +1,16 @@
+---
+title: Identity and Service Provider
+metaDesc: Difference between OAuth, SAML, and OpenID Connect
+---
+
+OAuth, SAML, and OpenID are three protocols that allow users to authenticate and authorize their access to web applications and services. They have different purposes and features, but they all rely on a trust relationship between the IdP (the entity that verifies the user's identity and issues a token or assertion) and the SP (the entity that provides the web application or service and consumes the token or assertion from the IdP). OAuth is an open standard for authorization that enables users to grant limited access to their resources on one site to another site without sharing credentials. SAML is an XML-based standard for single sign-on (SSO) that allows users to log in to multiple sites with one set of credentials. OpenID is an open standard for authentication that permits users to use an existing identity on one site to sign in to another site without creating a new account. For example, you can use OAuth to let a third-party app access your Google Drive files or your Facebook photos, use SAML to log in to your company's intranet, email, and CRM system with one username and password, and use OpenID to log in to Stack Overflow with your Google or Facebook account.
+
+Authentication determines if a user really is who they say they are. "Are you really Ethan? Give me a password that only you and I would know to prove it."
+
+Authorization is about what the user has access to after they have been authenticated. "Welcome Ethan. You are authorized to login to this computer, but you're not authorized to access those files."
+
+SAML is a protocol for authentication. Basically, you have a service provider (Salesforce, G Suite, Box, etc) and you have an identity provider (Okta, OneLogin, Ping Identity, etc). You'll have a user account in both systems, let's say for Jane. When Jane goes to login to Box, she would typically provide a username and password, then Box would authenticate the user. But the IT admins have setup SAML with Box and Ping. So when Jane goes to Box to login now, Box sends a SAML request to Ping. Ping receives that request and may ask the user to login to Ping, if they haven't already. Ping is essentially tasked with authentication. Ping then sends a SAML response to Box. Box accepts this and creates a session for the user and they're now logged in. To Box, the SAML response they received is used instead of them providing a username and password.
+
+OAuth is for authorization. Let's say if I want Vercel to build my Next.js project in Github, Vercel will promp me to ask if they could have permission to access my Github account (to pull in my Git project). OAuth is the protocol used to authorize other services to have access to things in my Github account. Facebook does the same. You may even see apps that say, "Login with your Facebook or Google account and we'll import all your contacts into our system." That's OAuth being used by Facebook and Google to authorize other services to access resources in your account.
+
+OpenID is for authentication and is often used along with OAuth. One protocol for authentication and another protocol for authorization. With OpenID, I can log in to, say, dating apps, using my Google or Facebook account.

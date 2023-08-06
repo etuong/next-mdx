@@ -19,14 +19,14 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params: { slug } }) {
-  const source  = fs.readFileSync(`posts/${slug}.mdx`, "utf-8");
-  const { data: frontmatter, content } = matter(source );
+  const source = fs.readFileSync(`posts/${slug}.mdx`, "utf-8");
+  const { data: frontmatter, content } = matter(source);
   const mdxSource = await serialize(content);
   return {
     props: {
       frontmatter,
       content,
-      mdxSource
+      mdxSource,
     },
   };
 }
