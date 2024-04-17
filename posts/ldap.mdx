@@ -1,0 +1,42 @@
+---
+title: Lightweight Directory Access Protocol (LDAP)
+metaDesc: An open, vendor-neutral, industry standard application protocol for accessing and maintaining distributed directory information services over an Internet Protocol network
+---
+
+Lightweight Directory Access Protocol (LDAP) is a software protocol used to look up information within a network. It is commonly the answer to build a central authentication server for organizations or simplify access to internal servers. For example, LDAP can be designed to maintain and access directory services such as a "phonebook" for users. This protocol has two main goals: to store data in the LDAP directory and authenticate users to access the directory. When LDAP functions as IAM (Identity and Access Management), it enables organizations to store, manage, and secure information about the organization, its users, and assets–like usernames and passwords. This helps simplify storage access by providing a hierarchical structure of information.
+
+An LDAP query typically involves:
+
+- Session connection. The client connects to the server via an LDAP port.
+- Request. The client submits a query, such as a user lookup, to the server.
+- Response. The LDAP protocol queries the directory, finds the information, and delivers it to the client.
+- Completion. The user disconnects from the LDAP port.
+
+The search looks simple, but a great deal of coding makes the function possible. Developers must determine the size limit of the search, the time the server can spend processing it, how many variables can be included in a search, and more. Fortunately, XetaDev has wired up everything for your convenience!
+
+To connect to a LDAP directory, a user must have an LDAP client installed on their device with the following workflow:
+
+1. Using the client, the user establishes a secure connection with the LDAP directory
+1. They send a search query to the directory
+1. The LDAP directory authenticates the user using a client-server model of authentication that consists of the distinguished name (DN), which contains a path through the directory information tree (DIT) for LDAP to navigate through (ex. cn=Susan, ou=users, o=Company)
+1. The search operation is performed within the directory and a response is returned to the client
+
+## Understanding LDAP Components
+
+LDAP's lightweight structure and use of a directory information tree (DIT) make it possible to quickly run an LDAP search and successfully provide results. In short, the DIT quickly navigates through the different levels of the LDAP directory to narrow down search results and provides a response to a query. The DIT starts at the root directory, followed by countries, which then branches out to two subclasses: the Domain Component (dc) and Organization Name (o). Let's learn more on these components to understand how LDAP searches work.
+
+An LDAP user query may contain attributes and properties that are essential to one's need such as an application integration or interaction. Attributes available in RTX LDAP, including mapping from hUTC and hRTN LDAP are available in Service Now RTX LDAP attributes.
+
+_Domain Access Component (dc)_
+The dc (i.e. dc=com, dc=example) uses domain name system (DNS) mapping to locate Internet domain names and translate them into IP addresses.
+
+_Organization Name (o) and Organizational Unit (ou)_
+The o and ou subclasses (ex. o-Company ou-groups) are general subclasses listed in the DN where LDAP starts when it runs a search.
+
+_Common name (cn)_
+A common name, or cn, is used to identify the name of a group or individual user account (ex. cn=developers, cn=Susan). A user can belong to a group, so if Susan is a developer, they could also live under cn=developers.
+
+Below is a highly simplified example of an LDAP directory information tree of printers and people.
+
+<img src="/images/ldap.png" />
+`
